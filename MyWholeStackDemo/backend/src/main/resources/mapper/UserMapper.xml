@@ -8,14 +8,14 @@
 <!--写mapper的配置文件第一步就是要写<mapper></mapper>标签-->
 <!--<mapper></mapper>标签里包含着各个CURD操作的SQL语句-->
 <mapper namespace="com.example.backend.DAO.UserMapper">
-    <!--定义一个名为BaseResultMap的返回类型-->
+<!--    定义一个名为BaseResultMap的返回类型-->
     <resultMap id="BaseResultMap" type="com.example.backend.Entity.User">
-        <result column="user_id" jdbcType="INTEGER" property="id" />
-        <result column="user_password" jdbcType="VARCHAR" property="password" />
-        <result column="user_name" jdbcType="VARCHAR" property="name" />
+        <result column="user_id" jdbcType="INTEGER" property="user_id" />
+        <result column="user_password" jdbcType="VARCHAR" property="user_password" />
+        <result column="user_name" jdbcType="VARCHAR" property="user_name" />
     </resultMap>
-
-    <select id="findUser" resultMap="BaseResultMap">
+<!--只要命名一样就可以直接对应，使用下划线是符合规范的-->
+    <select id="findUser" resultType="com.example.backend.Entity.User">
         select  *
         from   usr
     </select>

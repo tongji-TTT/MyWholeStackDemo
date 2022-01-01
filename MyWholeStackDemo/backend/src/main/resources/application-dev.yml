@@ -11,7 +11,14 @@ spring:
     password: DRT1951725
 
     driver-class-name: com.mysql.cj.jdbc.Driver
+    #for swagger
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+# control the swagger is closed or not
+swagger:
+  enabled: true
 
 mybatis:
-#  type-aliases-package: com.example.backend.Entity
   mapper-locations: classpath:/mapper/*.xml
