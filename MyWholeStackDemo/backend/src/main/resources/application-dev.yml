@@ -1,0 +1,17 @@
+server:
+  port: 8088
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    url: jdbc:mysql://101.132.138.14:3306/whole_stack_demo
+    username: DRT
+    password: DRT1951725
+
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+#  type-aliases-package: com.example.backend.Entity
+  mapper-locations: classpath:/mapper/*.xml

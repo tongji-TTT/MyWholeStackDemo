@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--上面2行的是约束依赖，固定照抄就好-->
+<!--下面的才是要自己编写的地方-->
+<!--写mapper的配置文件第一步就是要写<mapper></mapper>标签-->
+<!--<mapper></mapper>标签里包含着各个CURD操作的SQL语句-->
+<mapper namespace="com.example.backend.DAO.UserMapper">
+    <!--定义一个名为BaseResultMap的返回类型-->
+    <resultMap id="BaseResultMap" type="com.example.backend.Entity.User">
+        <result column="user_id" jdbcType="INTEGER" property="id" />
+        <result column="user_password" jdbcType="VARCHAR" property="password" />
+        <result column="user_name" jdbcType="VARCHAR" property="name" />
+    </resultMap>
+
+    <select id="findUser" resultMap="BaseResultMap">
+        select  *
+        from   usr
+    </select>
+
+
+</mapper>
